@@ -1,66 +1,51 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import HoopRunner from "./hooprunner/HoopRunner";
+import "@rainbow-me/rainbowkit/styles.css";
+import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { optimism } from "wagmi/chains";
+import { alchemyProvider } from "wagmi/providers/alchemy";
+import { publicProvider } from "wagmi/providers/public";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { AuthProvider } from "react-auth-kit";
 
-const teams = [
-  {
-    teamName: "Team 1",
-    roster: [
-      { playerName: "Reginald" },
-      { playerName: "Bob" },
-      { playerName: "Mike S." },
-    ],
-  },
-  {
-    teamName: "Team 2",
-    roster: [
-      { playerName: "Archibald" },
-      { playerName: "Stan" },
-      { playerName: "Mike A." },
-    ],
-  },
-  {
-    teamName: "Team 3",
-    roster: [
-      { playerName: "Archibaldo" },
-      { playerName: "Stank" },
-      { playerName: "Mikey A." },
-    ],
-  },
-];
+const { chains, publicClient } = configureChains(
+  [optimism],
+  [
+    alchemyProvider({ apiKey: import.meta.env.VITE_ALCHEMY_ID }),
+    publicProvider(),
+  ]
+);
+const { connectors } = getDefaultWallets({
+  appName: "HoopRunner",
+  projectId: "HOOPRUNNER_ID",
+  chains,
+});
 
-export default function HoopRunner() {
+const wagmiConfig = createConfig({
+  autoConnect: true,
+  connectors,
+  publicClient,
+});
+
+import "./App.css";
+export default function App() {
   return (
-    <>
-      {teams?.map((team) => {
-        return (
-          <div key={team.teamName}>
-            <Team name={team.teamName} players={team.roster} />
-          </div>
-        );
-      })}
-      ,
-      {/* <div>
-        <Team players={teams[0]} />
-      </div>
-      <div>
-        <Team players={["Archibald", "Stan", "Mike A."]} />
-      </div> */}
-    </>
+    <div className="App">
+      <AuthProvider
+        authType={"cookie"}
+        authName={"_auth"}
+        cookieDomain={window.domain.hostname}
+        cookieSecure={false}
+      >
+        <WagmiConfig config={wagmiConfig}>
+          <RainbowKitProvider chains={chains}>
+            <ConnectButton />
+            <HoopRunner />
+          </RainbowKitProvider>
+        </WagmiConfig>
+      </AuthProvider>
+    </div>
   );
-}
-
-function Team({ players }) {
-  return (
-    <>
-      {players?.map((player) => {
-        return (
-          <Player key={player.playerName} playerName={player.playerName} />
-        );
-      })}
-    </>
-  );
-}
-
-function Player({ playerName }) {
-  return <div className="player">Player: {playerName}</div>;
 }
