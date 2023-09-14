@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import { useIsAuthenticated } from "react-auth-kit";
 import HomePage from "../../pages/HomePage";
-import HoopRunner from "../HoopRunner";
 import TeamsList from "../TeamsList";
 import TeamView from "../TeamView";
 import PlayersList from "../PlayersList";
@@ -28,7 +27,6 @@ const RouteComponent: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/hooprunner" element={<HoopRunner />} />
         <Route path="/teams" element={<TeamsList />} />
         <Route path="/teams/:teamId" element={<TeamView />} />
         <Route path="/players" element={<PlayersList />} />
@@ -37,7 +35,7 @@ const RouteComponent: React.FC = () => {
           path="/private"
           element={
             <PrivateRoute>
-              <HoopRunner />
+              <HomePage />
             </PrivateRoute>
           }
         />
