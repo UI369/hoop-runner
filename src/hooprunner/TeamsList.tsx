@@ -7,16 +7,33 @@ const TeamsList: React.FC = () => {
 
   useEffect(() => {
     fetch("http://localhost:3000/teams")
-      .then((response) => response.json())
-      .then((data) => setTeams(data))
-      .catch((error) => console.error("Error fetching teams:", error));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("data:", data);
+        setTeams(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching teams:", error);
+      });
   }, []);
 
   return (
     <div>
       <h1>Teams</h1>
       {teams.map((team) => (
-        <Team key={team.id} id={team.id} name={team.teamName} viewMode="list" />
+        <>
+          <Team
+            key={team.id}
+            id={team.id}
+            name={team.team_name}
+            viewMode="list"
+          />
+        </>
       ))}
     </div>
   );

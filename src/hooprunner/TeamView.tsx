@@ -9,23 +9,27 @@ const TeamView: React.FC = () => {
 
   useEffect(() => {
     fetch(`http://localhost:3000/teams/${teamId}`)
-      .then((response) => response.json())
-      .then((data) => setTeam(data))
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((team) => {
+        console.log("TeamView team:", team);
+        setTeam(team);
+      })
       .catch((error) => console.error("Error fetching team:", error));
   }, []);
 
   return (
     <div>
-      <h1>Teams Details</h1>
-      {team && (
-        <Team
-          key={team.id}
-          id={team.id}
-          name={team.teamName}
-          players={team.players}
-          viewMode="detailed"
-        />
-      )}
+      {team ? (
+        <>
+          <h1>{team.team_name}</h1>
+          <Team id={team.id} team={team} viewMode="detailed" />
+        </>
+      ) : null}
     </div>
   );
 };

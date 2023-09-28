@@ -10,21 +10,19 @@ const PlayerView: React.FC = () => {
   useEffect(() => {
     fetch(`http://localhost:3000/players/${playerId}`)
       .then((response) => response.json())
-      .then((data) => setPlayer(data))
+      .then((player) => {
+        console.log("player:", player);
+        setPlayer(player);
+      })
       .catch((error) => console.error("Error fetching player:", error));
   }, []);
 
   return (
     <div>
       <h1>Players Details</h1>
-      {player && (
-        <Player
-          key={player.id}
-          id={player.id}
-          playerName={player.playerName}
-          viewMode="detailed"
-        />
-      )}
+      {player ? (
+        <Player id={player.id} player={player} viewMode="detailed" />
+      ) : null}
     </div>
   );
 };
