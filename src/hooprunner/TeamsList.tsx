@@ -27,12 +27,7 @@ const TeamsList: React.FC = () => {
       <h1>Teams</h1>
       {teams.map((team) => (
         <>
-          <Team
-            key={team.id}
-            id={team.id}
-            name={team.team_name}
-            viewMode="list"
-          />
+          <Team key={team.id} id={team.id} team={team} viewMode="list" />
         </>
       ))}
     </div>

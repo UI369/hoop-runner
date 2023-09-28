@@ -16,7 +16,7 @@ const PlayersList: React.FC = () => {
     <div>
       <h1>Players</h1>
       {players.map((player) => (
-        <Player key={player.id} id={player.id} playerName={player.playerName} />
+        <Player key={player.id} id={player.id} player={player} />
       ))}
     </div>
   );
