@@ -10,11 +10,9 @@ interface Props {
 }
 
 const Team: React.FC<Props> = ({ id, team, viewMode }) => {
-  console.log("Team team:", team);
   if (viewMode === "list") {
     return (
       <div style={{ border: "1px solid black" }}>
-        <span>{team.team_name}</span>
         <Link to={`/teams/${id}`}>{team.team_name}</Link>
       </div>
     );
@@ -22,7 +20,7 @@ const Team: React.FC<Props> = ({ id, team, viewMode }) => {
 
   return (
     <div style={{ border: "1px solid black" }}>
-      <span>{team.team_name}</span>
+      <h1>{team.team_name}</h1>
       {team.players?.map((player) => (
         <PlayerComponent
           key={player.id}
@@ -31,6 +29,9 @@ const Team: React.FC<Props> = ({ id, team, viewMode }) => {
           viewMode="detailed"
         />
       ))}
+      <span>
+        Back to <Link to={`/teams/`}>Teams</Link>
+      </span>
     </div>
   );
 };

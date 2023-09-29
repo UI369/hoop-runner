@@ -26,7 +26,6 @@ const TeamView: React.FC = () => {
     <div>
       {team ? (
         <>
-          <h1>{team.team_name}</h1>
           <Team id={team.id} team={team} viewMode="detailed" />
         </>
       ) : null}

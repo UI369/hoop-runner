@@ -88,7 +88,7 @@ body {
 
 .board-row:after {
   clear: both;
-  content: '';
+  content: "";
   display: table;
 }
 
@@ -102,4 +102,31 @@ body {
 
 .game-info {
   margin-left: 20px;
+}
+
+.player {
+  /* Set a fixed width or use max-width for responsiveness */
+  width: 300px;
+  /* Set a minimum height to ensure each player has some space */
+  min-height: 150px;
+  /* Add some padding for spacing inside the player div */
+  padding: 10px;
+  /* Add a border to visually separate each player */
+  border: 1px solid #ccc;
+  /* Add some margin to ensure players don't touch each other */
+  margin: 10px;
+  /* Ensure the content doesn't overflow */
+  overflow: hidden;
+  /* Optional: Add a background color */
+  background-color: #f9f9f9;
+  /* Optional: Add some border-radius for rounded corners */
+  border-radius: 5px;
+}
+
+/* Style the player details for better readability */
+.player-details p {
+  /* Add some margin to separate each detail */
+  margin: 5px 0;
+  /* Optional: Use a font size that fits well within the player div */
+  font-size: 14px;
 }
