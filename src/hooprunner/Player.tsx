@@ -1,6 +1,7 @@
 import React from "react";
 import { PlayerType } from "./types";
 import { formatDate, inchesToFeet, birthdateToAge } from "../util/formatting";
+import { Link } from "react-router-dom";
 
 interface Props {
   id: number;
@@ -28,7 +29,9 @@ const Player: React.FC<Props> = ({ id, player, viewMode }) => {
   return (
     <div className="row">
       <span className="cell">
-        {player.first_name} {player.last_name}
+        <Link to={`/players/${player.id}`}>
+          {player.first_name} {player.last_name}
+        </Link>
       </span>
       <span className="player_fgm cell">{player.height || "N/A"}</span>
       <span className="player_fga cell">{player.weight || "N/A"}</span>
