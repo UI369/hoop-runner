@@ -95,9 +95,12 @@ body {
 .status {
   margin-bottom: 10px;
 }
+
 .game {
-  display: flex;
-  flex-direction: row;
+}
+
+.game-details {
+  padding: 1em;
 }
 
 .game-info {
@@ -106,11 +109,10 @@ body {
 
 .player {
   width: 300px;
-  min-height: 450px;
+  min-height: 300px;
   padding: 10px;
   border: 1px solid #ccc;
   margin: 10px;
-  overflow: hidden;
   background-color: #f9f9f9;
   border-radius: 5px;
 }
@@ -131,4 +133,53 @@ body {
 .cell {
   flex: 1 0 4%;
   box-sizing: border-box;
+}
+
+.internalLink {
+  display: inline-block; /* Makes the div behave like an inline element */
+  background-color: darkblue; /* Dark blue background */
+  padding: 10px 20px; /* Padding around the text to give button-like spacing */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text inside */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  margin-right: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  width: 200px;
+}
+
+.internalLink a {
+  text-decoration: none; /* Remove underline from the link */
+  color: white; /* White text color */
+  font-weight: bold; /* Bold text */
+}
+
+.internalLink:hover {
+  background-color: navy; /* Slightly different blue for a hover effect */
+}
+
+.verticalLink {
+  display: block; /* Ensures they stack vertically */
+  margin-bottom: 10px; /* Add some space between vertically stacked buttons */
+  width: 200px;
+  /* Button Styling */
+  color: #fff; /* White text color */
+  background-color: #dd4c2b; /* Coral color */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  /* Hover effect */
+  &:hover {
+    background-color: #e43f00; /* A slightly darker coral color on hover */
+  }
+}
+
+.verticalLink a {
+  text-decoration: none; /* Remove underline from the link */
+  color: white; /* White text color */
+  font-weight: bold; /* Bold text */
 }

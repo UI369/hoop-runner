@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Game from "./Game";
 import { GameType } from "./types";
+import { Link } from "react-router-dom";
 
 const GamesList: React.FC = () => {
   const [games, setGames] = useState<GameType[]>([]);
@@ -18,6 +19,10 @@ const GamesList: React.FC = () => {
       {games.map((game) => (
         <Game key={game.id} id={game.id} game={game} viewMode="list" />
       ))}
+      <div className="internalLink">
+        {" "}
+        <Link to={`/`}>Return Home</Link>
+      </div>
     </div>
   );
 };

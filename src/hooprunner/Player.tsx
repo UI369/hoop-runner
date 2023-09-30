@@ -6,23 +6,30 @@ import { Link } from "react-router-dom";
 interface Props {
   id: number;
   player: PlayerType;
+  captain: Boolean;
   viewMode?: "list" | "detailed";
 }
 
-const Player: React.FC<Props> = ({ id, player, viewMode }) => {
+const Player: React.FC<Props> = ({ id, player, captain, viewMode }) => {
   if (viewMode === "detailed") {
     return (
-      <div className="player">
-        {player.first_name} {player.last_name}
-        <div className="player-details">
-          <p>Height: {inchesToFeet(player.height) || "N/A"}</p>
-          <p>Weight: {player.weight || "N/A"} lbs</p>
-          <p>Age: {birthdateToAge(player.birthdate)}</p>
-          <p>Comment: {player.comment || "N/A"}</p>
-          <p>Position: {player.position.join(", ")}</p>
-          <p>Shirt Size: {player.shirt_size || "N/A"}</p>
+      <>
+        <div className="player">
+          {player.first_name} {player.last_name}
+          {captain ? "*" : ""}
+          <div className="player-details">
+            <p>Height: {inchesToFeet(player.height) || "N/A"}</p>
+            <p>Weight: {player.weight || "N/A"} lbs</p>
+            <p>Age: {birthdateToAge(player.birthdate)}</p>
+            <p>Comment: {player.comment || "N/A"}</p>
+            <p>Position: {player.position.join(", ")}</p>
+            <p>Shirt Size: {player.shirt_size || "N/A"}</p>
+          </div>
         </div>
-      </div>
+        <div className="internalLink">
+          <Link to={`/`}>Return Home</Link>
+        </div>
+      </>
     );
   }
 
@@ -31,6 +38,7 @@ const Player: React.FC<Props> = ({ id, player, viewMode }) => {
       <span className="cell">
         <Link to={`/players/${player.id}`}>
           {player.first_name} {player.last_name}
+          {captain ? "*" : ""}
         </Link>
       </span>
       <span className="player_fgm cell">{player.height || "N/A"}</span>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Team from "./Team";
 import { TeamType } from "./types";
+import { Link } from "react-router-dom";
 
 const TeamsList: React.FC = () => {
   const [teams, setTeams] = useState<TeamType[]>([]);
@@ -30,6 +31,9 @@ const TeamsList: React.FC = () => {
           <Team key={team.id} id={team.id} team={team} viewMode="list" />
         </>
       ))}
+      <div className="internalLink">
+        <Link to={`/`}>Return Home</Link>
+      </div>
     </div>
   );
 };

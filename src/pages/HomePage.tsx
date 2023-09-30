@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 const HomePage: React.FC = () => {
   return (
     <div>
-      <h1>Welcome to the Home Page!</h1>
-      <p>This is a placeholder page for HomePage.</p>
-      <Link to={`/teams/`}>View Teams</Link>
+      <h1>Grass Valley Draft League</h1>
+      <div className="internalLink">
+        <Link to={`/teams/`}>View Teams</Link>
+      </div>
+      <div className="internalLink">
+        <Link to={`/games/`}>View Games</Link>
+      </div>
     </div>
   );
 };
