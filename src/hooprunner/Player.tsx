@@ -27,7 +27,9 @@ const Player: React.FC<Props> = ({ id, player, viewMode }) => {
 
   return (
     <div className="row">
-      {player.first_name} {player.last_name}
+      <span className="cell">
+        {player.first_name} {player.last_name}
+      </span>
       <span className="player_fgm cell">{player.height || "N/A"}</span>
       <span className="player_fga cell">{player.weight || "N/A"}</span>
       <span className="player_fg% cell">{player.weight || "N/A"}</span>
