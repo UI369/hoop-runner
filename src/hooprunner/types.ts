@@ -29,3 +29,14 @@ export interface TeamType {
   season_id: number;
   players: PlayerType[];
 }
+
+export interface GameType {
+  id: number;
+  game_time: string;
+  team_home_id: number;
+  team_away_id: number;
+  season_id: number;
+  home_score: number;
+  away_score: number;
+  location: string;
+}

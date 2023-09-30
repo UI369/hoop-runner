@@ -1,5 +1,16 @@
-export function formatDate(dateString) {
-  const options = { year: "numeric", month: "short", day: "numeric" };
+export function formatDate(dateString, includeTime = false) {
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
+
+  if (includeTime) {
+    options.hour = "numeric";
+    options.minute = "2-digit";
+    options.hour12 = true;
+  }
+
   return new Date(dateString).toLocaleDateString(undefined, options);
 }
 

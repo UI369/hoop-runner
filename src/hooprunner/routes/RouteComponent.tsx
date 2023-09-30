@@ -11,6 +11,8 @@ import TeamsList from "../TeamsList";
 import TeamView from "../TeamView";
 import PlayersList from "../PlayersList";
 import PlayerView from "../PlayerView";
+import GamesView from "../GamesView";
+import GamesList from "../GamesList";
 
 type PrivateRouteProps = {
   children: React.ReactNode;
@@ -31,6 +33,8 @@ const RouteComponent: React.FC = () => {
         <Route path="/teams/:teamId" element={<TeamView />} />
         <Route path="/players" element={<PlayersList />} />
         <Route path="/players/:playerId" element={<PlayerView />} />
+        <Route path="/games/:gameId" element={<GamesView />} />
+        <Route path="/games" element={<GamesList />} />
         <Route
           path="/private"
           element={

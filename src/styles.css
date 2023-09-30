@@ -105,21 +105,13 @@ body {
 }
 
 .player {
-  /* Set a fixed width or use max-width for responsiveness */
   width: 300px;
-  /* Set a minimum height to ensure each player has some space */
-  min-height: 150px;
-  /* Add some padding for spacing inside the player div */
+  min-height: 450px;
   padding: 10px;
-  /* Add a border to visually separate each player */
   border: 1px solid #ccc;
-  /* Add some margin to ensure players don't touch each other */
   margin: 10px;
-  /* Ensure the content doesn't overflow */
   overflow: hidden;
-  /* Optional: Add a background color */
   background-color: #f9f9f9;
-  /* Optional: Add some border-radius for rounded corners */
   border-radius: 5px;
 }
 
@@ -129,4 +121,14 @@ body {
   margin: 5px 0;
   /* Optional: Use a font size that fits well within the player div */
   font-size: 14px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  flex: 1 0 4%;
+  box-sizing: border-box;
 }

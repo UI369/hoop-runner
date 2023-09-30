@@ -26,7 +26,7 @@ const Team: React.FC<Props> = ({ id, team, viewMode }) => {
           key={player.id}
           id={player.id}
           player={player}
-          viewMode="detailed"
+          viewMode="list"
         />
       ))}
       <span>
