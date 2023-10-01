@@ -16,7 +16,7 @@ const Player: React.FC<Props> = ({ id, player, captain, viewMode }) => {
       <>
         <div className="player">
           {player.first_name} {player.last_name}
-          {captain ? "*" : ""}
+          {captain ? "(captain)" : ""}
           <div className="player-details">
             <p>Height: {inchesToFeet(player.height) || "N/A"}</p>
             <p>Weight: {player.weight || "N/A"} lbs</p>
@@ -24,6 +24,7 @@ const Player: React.FC<Props> = ({ id, player, captain, viewMode }) => {
             <p>Comment: {player.comment || "N/A"}</p>
             <p>Position: {player.position.join(", ")}</p>
             <p>Shirt Size: {player.shirt_size || "N/A"}</p>
+            <p>Captain: {String(captain)}</p>
           </div>
         </div>
         <div className="internalLink">
@@ -38,7 +39,7 @@ const Player: React.FC<Props> = ({ id, player, captain, viewMode }) => {
       <span className="cell">
         <Link to={`/players/${player.id}`}>
           {player.first_name} {player.last_name}
-          {captain ? "*" : ""}
+          {captain ? "(*)" : ""}
         </Link>
       </span>
       <span className="player_fgm cell">{player.height || "N/A"}</span>

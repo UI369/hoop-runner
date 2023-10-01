@@ -6,13 +6,22 @@ import { PlayerType } from "./types";
 const PlayerView: React.FC = () => {
   const { playerId } = useParams<{ playerId: string }>();
   const [player, setPlayer] = useState<PlayerType | null>(null);
+  const [isCaptain, setIsCaptain] = useState<boolean>(false);
 
   useEffect(() => {
     fetch(`http://localhost:3000/players/${playerId}`)
       .then((response) => response.json())
       .then((player) => {
-        console.log("player:", player);
         setPlayer(player);
+        // Fetch teams to check captain status
+        return fetch(`http://localhost:3000/teams`)
+          .then((response) => response.json())
+          .then((teams) => {
+            const captainTeam = teams.find(
+              (team: any) => team.captain_id === player?.id
+            );
+            setIsCaptain(!!captainTeam);
+          });
       })
       .catch((error) => console.error("Error fetching player:", error));
   }, []);
@@ -21,7 +30,12 @@ const PlayerView: React.FC = () => {
     <div>
       <h1>Players Details</h1>
       {player ? (
-        <Player id={player.id} player={player} viewMode="detailed" />
+        <Player
+          id={player.id}
+          player={player}
+          captain={isCaptain}
+          viewMode="detailed"
+        />
       ) : null}
     </div>
   );
