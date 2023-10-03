@@ -33,6 +33,7 @@ export interface TeamType {
 export interface StatsType {
   id: number;
   player_id: number;
+  playerName: string;
   game_id: number;
   home: Boolean;
   twos_attempted: number;

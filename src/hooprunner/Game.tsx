@@ -2,7 +2,11 @@ import React from "react";
 import { GameType, StatsType } from "./types";
 import { formatDate } from "../util/formatting";
 import { Link } from "react-router-dom";
+import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 import StatsLineComponent from "./StatsLine";
+
+// src/components/Game.js or src/components/Game.tsx
+
 interface Props {
   id: number;
   game: GameType;
@@ -19,16 +23,21 @@ const Game: React.FC<Props> = ({ id, game, viewMode }) => {
           <p>Away Score: {game.away_score}</p>
           <p>Location: {game.location}</p>
         </div>
-        <StatsLineComponent id={0} header={true} />
-        {game.homeStats?.map((stats_line) => {
-          return (
-            <StatsLineComponent
-              key={stats_line.id}
-              id={stats_line.id}
-              stats={stats_line}
-            />
-          );
-        })}
+
+        <Table variant="simple">
+          <StatsLineComponent id={0} header={true} />
+
+          <Tbody>
+            {game.homeStats?.map((stats_line) => (
+              <StatsLineComponent
+                key={stats_line.id}
+                id={stats_line.id}
+                stats={stats_line}
+                header={false}
+              />
+            ))}
+          </Tbody>
+        </Table>
 
         <div className="internalLink">
           <Link to={`/games/`}>Back to Games</Link>
