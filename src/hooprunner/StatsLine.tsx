@@ -45,7 +45,7 @@ const StatsLine: React.FC<Props> = ({ id, stats, header }) => {
 
   const freethrowPercentage =
     stats?.freethrows_attempted && stats?.freethrows_attempted > 0
-      ? (stats.freethrows_made / stats.freethrows_attempted) * 100
+      ? +((stats.freethrows_made / stats.freethrows_attempted) * 100).toFixed(1)
       : 0;
 
   const rebounds =
