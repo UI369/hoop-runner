@@ -1,7 +1,8 @@
 import React from "react";
-import { GameType } from "./types";
+import { GameType, StatsType } from "./types";
 import { formatDate } from "../util/formatting";
 import { Link } from "react-router-dom";
+import StatsLineComponent from "./StatsLine";
 interface Props {
   id: number;
   game: GameType;
@@ -18,6 +19,17 @@ const Game: React.FC<Props> = ({ id, game, viewMode }) => {
           <p>Away Score: {game.away_score}</p>
           <p>Location: {game.location}</p>
         </div>
+        <StatsLineComponent id={0} header={true} />
+        {game.homeStats?.map((stats_line) => {
+          return (
+            <StatsLineComponent
+              key={stats_line.id}
+              id={stats_line.id}
+              stats={stats_line}
+            />
+          );
+        })}
+
         <div className="internalLink">
           <Link to={`/games/`}>Back to Games</Link>
         </div>

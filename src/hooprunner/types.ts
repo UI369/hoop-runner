@@ -30,6 +30,25 @@ export interface TeamType {
   players: PlayerType[];
 }
 
+export interface StatsType {
+  id: number;
+  player_id: number;
+  game_id: number;
+  home: Boolean;
+  twos_attempted: number;
+  twos_made: number;
+  minutes_played: number;
+  threes_attempted: number;
+  threes_made: number;
+  fouls: number;
+  assists: number;
+  blocks: number;
+  steals: number;
+  freethrows_attempted: number;
+  freethrows_made: number;
+  offensive_rebounds: number;
+  defensive_rebounds: number;
+}
 export interface GameType {
   id: number;
   game_time: string;
@@ -39,4 +58,6 @@ export interface GameType {
   home_score: number;
   away_score: number;
   location: string;
+  homeStats: StatsType[];
+  awayStats: StatsType[];
 }
