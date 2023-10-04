@@ -19,9 +19,17 @@ const Game: React.FC<Props> = ({ id, game, viewMode }) => {
       <div className="game">
         <div>{formatDate(game.game_time, true)}</div>
         <div className="game-details">
-          <p>Home Score: {game.home_score}</p>
-          <p>Away Score: {game.away_score}</p>
-          <p>Location: {game.location}</p>
+          <p>
+            <strong>{game.home_team.team_name} (Home):</strong>{" "}
+            {game.home_score}
+          </p>
+          <p>
+            <strong>{game.away_team.team_name} (Away): </strong>{" "}
+            {game.away_score}
+          </p>
+          <p>
+            <strong>Location:</strong> {game.location}
+          </p>
         </div>
 
         <Table variant="simple">

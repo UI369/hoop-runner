@@ -59,6 +59,8 @@ export interface GameType {
   home_score: number;
   away_score: number;
   location: string;
+  home_team: TeamType;
+  away_team: TeamType;
   homeStats: StatsType[];
   awayStats: StatsType[];
 }
