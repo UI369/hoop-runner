@@ -9,12 +9,12 @@ const PlayerView: React.FC = () => {
   const [isCaptain, setIsCaptain] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/players/${playerId}`)
+    fetch(`${import.meta.env.VITE_API_URL}/players/${playerId}`)
       .then((response) => response.json())
       .then((player) => {
         setPlayer(player);
         // Fetch teams to check captain status
-        return fetch(`http://localhost:3000/teams`)
+        fetch(`${import.meta.env.VITE_API_URL}/teams`)
           .then((response) => response.json())
           .then((teams) => {
             const captainTeam = teams.find(

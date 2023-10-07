@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 const GamesList: React.FC = () => {
   const [games, setGames] = useState<GameType[]>([]);
-
+  console.log("url", import.meta.env);
   useEffect(() => {
-    fetch("http://localhost:3000/games")
+    fetch(`${import.meta.env.VITE_API_URL}/games`)
       .then((response) => response.json())
       .then((data) => setGames(data))
       .catch((error) => console.error("Error fetching games:", error));

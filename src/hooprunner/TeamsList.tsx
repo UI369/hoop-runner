@@ -7,7 +7,7 @@ const TeamsList: React.FC = () => {
   const [teams, setTeams] = useState<TeamType[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/teams")
+    fetch(`${import.meta.env.VITE_API_URL}/teams`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");

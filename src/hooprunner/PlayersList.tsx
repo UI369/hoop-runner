@@ -6,7 +6,7 @@ const PlayersList: React.FC = () => {
   const [players, setPlayers] = useState<PlayerType[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/players")
+    fetch(`${import.meta.env.VITE_API_URL}/players`)
       .then((response) => response.json())
       .then((data) => setPlayers(data))
       .catch((error) => console.error("Error fetching players:", error));

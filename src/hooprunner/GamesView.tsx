@@ -9,7 +9,7 @@ const GameView: React.FC = () => {
   const [game, setGame] = useState<GameType | null>(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/games/${gameId}`)
+    fetch(`${import.meta.env.VITE_API_URL}/games/${gameId}`)
       .then((response) => response.json())
       .then((game) => {
         console.log("game:", game);

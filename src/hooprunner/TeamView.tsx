@@ -8,7 +8,7 @@ const TeamView: React.FC = () => {
   const [team, setTeam] = useState<TeamType | null>(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/teams/${teamId}`)
+    fetch(`${import.meta.env.VITE_API_URL}/teams/${teamId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
