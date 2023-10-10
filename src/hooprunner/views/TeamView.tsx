@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Team from "./Team";
-import { TeamType } from "./types";
+import { TeamType } from "../types";
 
 const TeamView: React.FC = () => {
   const { teamId } = useParams<{ teamId: string }>();

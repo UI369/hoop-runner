@@ -1,6 +1,6 @@
 import React from "react";
-import { GameType, StatsType } from "./types";
-import { formatDate } from "../util/formatting";
+import { GameType, StatsType } from "../types";
+import { formatDate } from "../../util/formatting";
 import { Link } from "react-router-dom";
 import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 import StatsLineComponent from "./StatsLine";

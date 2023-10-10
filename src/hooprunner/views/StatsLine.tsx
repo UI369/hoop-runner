@@ -1,6 +1,6 @@
 import React from "react";
-import { StatsType } from "./types";
-import { formatDate } from "../util/formatting";
+import { StatsType } from "../types";
+import { formatDate } from "../../util/formatting";
 import { Link } from "react-router-dom";
 import { Table, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 interface Props {

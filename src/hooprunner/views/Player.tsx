@@ -1,6 +1,10 @@
 import React from "react";
-import { PlayerType } from "./types";
-import { formatDate, inchesToFeet, birthdateToAge } from "../util/formatting";
+import { PlayerType } from "../types";
+import {
+  formatDate,
+  inchesToFeet,
+  birthdateToAge,
+} from "../../util/formatting";
 import { Link } from "react-router-dom";
 
 interface Props {

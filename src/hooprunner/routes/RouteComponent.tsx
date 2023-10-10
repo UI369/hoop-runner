@@ -7,12 +7,13 @@ import {
 } from "react-router-dom";
 import { useIsAuthenticated } from "react-auth-kit";
 import HomePage from "../../pages/HomePage";
-import TeamsList from "../TeamsList";
-import TeamView from "../TeamView";
-import PlayersList from "../PlayersList";
-import PlayerView from "../PlayerView";
-import GamesView from "../GamesView";
-import GamesList from "../GamesList";
+import RegistrationForm from "../registration/registration";
+import TeamsList from "../views/TeamsList";
+import TeamView from "../views/TeamView";
+import PlayersList from "../views/PlayersList";
+import PlayerView from "../views/PlayerView";
+import GamesView from "../views/GamesView";
+import GamesList from "../views/GamesList";
 
 type PrivateRouteProps = {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ const RouteComponent: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegistrationForm />} />
         <Route path="/teams" element={<TeamsList />} />
         <Route path="/teams/:teamId" element={<TeamView />} />
         <Route path="/players" element={<PlayersList />} />

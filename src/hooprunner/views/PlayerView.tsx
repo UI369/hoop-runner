@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Player from "./Player";
-import { PlayerType } from "./types";
+import { PlayerType } from "../types";
 
 const PlayerView: React.FC = () => {
   const { playerId } = useParams<{ playerId: string }>();

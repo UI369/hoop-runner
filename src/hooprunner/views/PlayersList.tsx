@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Player from "./Player";
-import { PlayerType } from "./types";
+import { PlayerType } from "../types";
 
 const PlayersList: React.FC = () => {
   const [players, setPlayers] = useState<PlayerType[]>([]);

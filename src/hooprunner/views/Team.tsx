@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PlayerComponent from "./Player";
-import { TeamType } from "./types";
+import { TeamType } from "../types";
 
 interface Props {
   id: number; // Add the id property

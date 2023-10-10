@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Game from "./Game";
-import { GameType } from "./types";
+import { GameType } from "../types";
 import { Link } from "react-router-dom";
 
 const GamesList: React.FC = () => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Team from "./Team";
-import { TeamType } from "./types";
+import { TeamType } from "../types";
 import { Link } from "react-router-dom";
 
 const TeamsList: React.FC = () => {
