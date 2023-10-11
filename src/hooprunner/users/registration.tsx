@@ -23,7 +23,10 @@ const RegistrationForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/register", formData);
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/user/register`,
+        formData
+      );
       setMessage(response.data.message);
     } catch (error) {
       const axiosError = error as AxiosError<ErrorResponse>;

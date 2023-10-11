@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { useIsAuthenticated } from "react-auth-kit";
 import HomePage from "../../pages/HomePage";
-import RegistrationForm from "../registration/registration";
+import RegistrationForm from "../users/registration";
 import TeamsList from "../views/TeamsList";
 import TeamView from "../views/TeamView";
 import PlayersList from "../views/PlayersList";
@@ -31,12 +31,13 @@ const RouteComponent: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<RegistrationForm />} />
+        <Route path="/games" element={<GamesList />} />
+        <Route path="/games/:gameId" element={<GamesView />} />
         <Route path="/teams" element={<TeamsList />} />
         <Route path="/teams/:teamId" element={<TeamView />} />
         <Route path="/players" element={<PlayersList />} />
         <Route path="/players/:playerId" element={<PlayerView />} />
-        <Route path="/games/:gameId" element={<GamesView />} />
-        <Route path="/games" element={<GamesList />} />
+
         <Route
           path="/private"
           element={
