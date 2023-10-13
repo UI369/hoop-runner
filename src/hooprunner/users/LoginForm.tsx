@@ -5,9 +5,8 @@ interface ErrorResponse {
   message: string;
 }
 
-const RegistrationForm = () => {
+const LoginForm: React.FC = () => {
   const [formData, setFormData] = useState({
-    username: "",
     email: "",
     password: "",
   });
@@ -24,10 +23,11 @@ const RegistrationForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/user/register`,
+        `${import.meta.env.VITE_API_URL}/users/login`,
         formData
       );
       setMessage(response.data.message);
+      // Here, you might also want to handle successful login, e.g., storing a token, redirecting the user, etc.
     } catch (error) {
       const axiosError = error as AxiosError<ErrorResponse>;
       setMessage(axiosError.response?.data.message || "An error occurred");
@@ -37,13 +37,6 @@ const RegistrationForm = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={formData.username}
-          onChange={handleChange}
-        />
         <input
           type="email"
           name="email"
@@ -58,11 +51,11 @@ const RegistrationForm = () => {
           value={formData.password}
           onChange={handleChange}
         />
-        <button type="submit">Register</button>
+        <button type="submit">Login</button>
       </form>
       {message && <p>{message}</p>}
     </div>
   );
 };
 
-export default RegistrationForm;
+export default LoginForm;
