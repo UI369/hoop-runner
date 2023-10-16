@@ -64,3 +64,10 @@ export interface GameType {
   homeStats: StatsType[];
   awayStats: StatsType[];
 }
+
+export interface SeasonType {
+  id: number;
+  start_date: string;
+  games: GameType[];
+  teams: TeamType[];
+}

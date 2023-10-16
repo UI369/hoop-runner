@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Team from "./Team";
+import TeamComponent from "./Team";
 import { TeamType } from "../types";
 import { Link } from "react-router-dom";
 
@@ -56,7 +56,12 @@ const TeamsList: React.FC = () => {
       <h1>Teams</h1>
       {teams.map((team) => (
         <>
-          <Team key={team.id} id={team.id} team={team} viewMode="list" />
+          <TeamComponent
+            key={team.id}
+            id={team.id}
+            team={team}
+            viewMode="list"
+          />
         </>
       ))}
       <div className="internalLink">

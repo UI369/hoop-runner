@@ -13,6 +13,8 @@ import CheckoutSession from "../users/CheckoutSession";
 import LoginForm from "../users/LoginForm";
 import TeamsList from "../views/TeamsList";
 import TeamView from "../views/TeamView";
+import SeasonsList from "../views/SeasonsList";
+import SeasonView from "../views/SeasonView";
 import PlayersList from "../views/PlayersList";
 import PlayerView from "../views/PlayerView";
 import GamesView from "../views/GamesView";
@@ -41,6 +43,8 @@ const RouteComponent: React.FC = () => {
         <Route path="/games/:gameId" element={<GamesView />} />
         <Route path="/teams" element={<TeamsList />} />
         <Route path="/teams/:teamId" element={<TeamView />} />
+        <Route path="/seasons/:seasonId" element={<SeasonView />} />
+        <Route path="/seasons" element={<SeasonsList />} />
         <Route path="/players" element={<PlayersList />} />
         <Route path="/players/:playerId" element={<PlayerView />} />
 

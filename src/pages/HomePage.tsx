@@ -29,6 +29,14 @@ const HomePage: React.FC = () => {
           </Heading>
           <ChakraLink
             as={RouterLink}
+            to="/seasons/"
+            variant="internalLink"
+            fontSize="xl"
+          >
+            View Seasons
+          </ChakraLink>
+          <ChakraLink
+            as={RouterLink}
             to="/teams/"
             variant="internalLink"
             fontSize="xl"
