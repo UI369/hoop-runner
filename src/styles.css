@@ -183,3 +183,17 @@ body {
   color: white; /* White text color */
   font-weight: bold; /* Bold text */
 }
+
+/* Styles for desktop screens */
+@media (min-width: 768px) {
+  .logoImage {
+    max-width: 25%;
+  }
+}
+
+/* Styles for mobile screens */
+@media (max-width: 767px) {
+  .logoImage {
+    max-width: 80%;
+  }
+}

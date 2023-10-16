@@ -53,9 +53,6 @@ const TeamsList: React.FC = () => {
 
   return (
     <div>
-      <div>
-        <button onClick={handleFetch}>Fetch Teams</button>
-      </div>
       <h1>Teams</h1>
       {teams.map((team) => (
         <>

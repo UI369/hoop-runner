@@ -9,6 +9,7 @@ import { useIsAuthenticated } from "react-auth-kit";
 import HomePage from "../../pages/HomePage";
 import RegistrationForm from "../users/RegistrationForm";
 import CheckoutForm from "../users/CheckoutForm";
+import CheckoutSession from "../users/CheckoutSession";
 import LoginForm from "../users/LoginForm";
 import TeamsList from "../views/TeamsList";
 import TeamView from "../views/TeamView";
@@ -33,6 +34,7 @@ const RouteComponent: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/payment" element={<CheckoutForm />} />
+        <Route path="/checkout" element={<CheckoutSession />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/games" element={<GamesList />} />
