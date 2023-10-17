@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PlayerComponent from "./Player";
 import TeamComponent from "./Team";
+import GameComponent from "./Game";
 import { SeasonType } from "../types";
 import {
   Link as ChakraLink,
@@ -28,14 +29,31 @@ const Season: React.FC<Props> = ({ id, season, viewMode }) => {
     return (
       <div style={{ border: "1px solid black" }}>
         <Center>
-          <VStack spacing={4} textAlign="center">
-            <div>Start Date: {readableDate(season.start_date)}</div>
+          <VStack spacing={2} textAlign="center">
+            <div>Season Start: {readableDate(season.start_date)}</div>
+            <hr></hr>
+            <h2>
+              <strong>Teams</strong>
+            </h2>
             {season.teams.map((team) => (
               <>
                 <TeamComponent
                   key={team.id}
                   id={team.id}
                   team={team}
+                  viewMode="list"
+                />
+              </>
+            ))}
+            <h2>
+              <strong>Games</strong>
+            </h2>
+            {season.games.map((game) => (
+              <>
+                <GameComponent
+                  key={game.id}
+                  id={game.id}
+                  game={game}
                   viewMode="list"
                 />
               </>
