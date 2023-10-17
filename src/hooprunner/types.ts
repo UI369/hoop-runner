@@ -25,6 +25,7 @@ export interface PlayerType {
 export interface TeamType {
   id: number;
   team_name: string;
+  short_name: string;
   captain_id: number;
   season_id: number;
   players: PlayerType[];

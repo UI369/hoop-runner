@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Season from "./Season";
 import { SeasonType } from "../types";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import {
   Link as ChakraLink,
   Box,
@@ -74,9 +74,14 @@ const SeasonsList: React.FC = () => {
               />
             </>
           ))}
-          <div className="internalLink">
-            <Link to={`/`}>Return Home</Link>
-          </div>
+          <ChakraLink
+            as={RouterLink}
+            to="/"
+            variant="internalLink"
+            fontSize="xl"
+          >
+            Return Home
+          </ChakraLink>
         </VStack>
       </Center>
     </div>

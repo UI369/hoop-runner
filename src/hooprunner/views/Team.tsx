@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PlayerComponent from "./Player";
 import { TeamType } from "../types";
+import { Center } from "@chakra-ui/react";
 
 interface Props {
   id: number; // Add the id property

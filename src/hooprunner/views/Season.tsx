@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import PlayerComponent from "./Player";
 import TeamComponent from "./Team";
 import GameComponent from "./Game";
 import { SeasonType } from "../types";
+import { Link as RouterLink } from "react-router-dom";
 import {
   Link as ChakraLink,
   Box,
@@ -35,32 +36,42 @@ const Season: React.FC<Props> = ({ id, season, viewMode }) => {
             <h2>
               <strong>Teams</strong>
             </h2>
-            {season.teams.map((team) => (
-              <>
-                <TeamComponent
-                  key={team.id}
-                  id={team.id}
-                  team={team}
-                  viewMode="list"
-                />
-              </>
-            ))}
+
+            <div className="game-score-container">
+              {season.teams.map((team) => (
+                <>
+                  <TeamComponent
+                    key={team.id}
+                    id={team.id}
+                    team={team}
+                    viewMode="list"
+                  />
+                </>
+              ))}
+            </div>
             <h2>
               <strong>Games</strong>
             </h2>
-            {season.games.map((game) => (
-              <>
-                <GameComponent
-                  key={game.id}
-                  id={game.id}
-                  game={game}
-                  viewMode="list"
-                />
-              </>
-            ))}
-            <div className="internalLink">
-              <Link to={`/`}>Back to Home</Link>
+            <div className="game-score-container">
+              {season.games.map((game) => (
+                <>
+                  <GameComponent
+                    key={game.id}
+                    id={game.id}
+                    game={game}
+                    viewMode="list"
+                  />
+                </>
+              ))}
             </div>
+            <ChakraLink
+              as={RouterLink}
+              to="/"
+              variant="internalLink"
+              fontSize="xl"
+            >
+              Return Home
+            </ChakraLink>
           </VStack>
         </Center>
       </div>
@@ -68,11 +79,14 @@ const Season: React.FC<Props> = ({ id, season, viewMode }) => {
   }
 
   return (
-    <div>
-      <div className="internalLink">
-        <Link to={`/seasons/${season.id}`}>Season {season.id}</Link>
-      </div>
-    </div>
+    <ChakraLink
+      as={RouterLink}
+      to={`/seasons/${season.id}`}
+      variant="internalLink"
+      fontSize="xl"
+    >
+      Season {season.id}
+    </ChakraLink>
   );
 };
 

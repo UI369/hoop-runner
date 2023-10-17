@@ -92,10 +92,6 @@ body {
   display: table;
 }
 
-.status {
-  margin-bottom: 10px;
-}
-
 .game {
 }
 
@@ -159,9 +155,9 @@ body {
 }
 
 .verticalLink {
-  display: block; /* Ensures they stack vertically */
+  display: flex; /* Ensures they stack vertically */
+  flex: 1;
   margin-bottom: 10px; /* Add some space between vertically stacked buttons */
-  width: 200px;
   /* Button Styling */
   color: #fff; /* White text color */
   background-color: #dd4c2b; /* Coral color */
@@ -171,6 +167,8 @@ body {
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  align-items: center; /* Centers items vertically */
+  justify-content: center; /* Centers items horizontally */
 
   /* Hover effect */
   &:hover {
@@ -182,6 +180,97 @@ body {
   text-decoration: none; /* Remove underline from the link */
   color: white; /* White text color */
   font-weight: bold; /* Bold text */
+}
+
+.game-score-container {
+}
+
+.game-score {
+  display: flex;
+  flex: 1; /* This ensures all blocks take up equal width */
+  min-width: 200px; /* You can adjust this to the smallest width you'd want for your blocks */
+  margin: 15px 10px; /* Some space between the blocks, adjust as needed */
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  padding: 10px 20px;
+  background-color: #ffffff;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.team-logo {
+  width: 50px; /* Adjust based on your actual logo dimensions */
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.team-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+
+.team-score {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0px 10px;
+}
+
+.status {
+  font-size: 18px;
+  font-weight: bold;
+  color: #777;
+  margin-top: 0px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.final {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.gameTime {
+  font-size: 38px;
+  font-weight: 900;
+  color: black;
+}
+
+.gameDate {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(84, 84, 84);
+}
+
+.away-score {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.home-score {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+/* Assuming there will be buttons like 'WATCH', 'BOX SCORE', etc. */
+.button {
+  padding: 5px 15px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+/* If the status is something other than 'FINAL', you might want a different color, for instance: */
+.status-preseason {
+  color: #e74c3c; /* Reddish color */
 }
 
 /* Styles for desktop screens */
