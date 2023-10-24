@@ -35,7 +35,7 @@ const Team: React.FC<Props> = ({ id, team, viewMode }) => {
           <span className="player_pf cell">PF</span>
           <span className="player_pts cell">PTS</span>
         </div>
-
+        console.log('team', team)
         {team.players?.map((player) => {
           return (
             <PlayerComponent

@@ -68,14 +68,6 @@ const SeasonsList: React.FC = () => {
               />
             </>
           ))}
-          <ChakraLink
-            as={RouterLink}
-            to="/"
-            variant="internalLink"
-            fontSize="xl"
-          >
-            Return Home
-          </ChakraLink>
         </VStack>
       </Center>
     </div>

@@ -20,6 +20,7 @@ export interface PlayerType {
   hidden: boolean | null; // made optional with the `?` in Prisma
   position: string[];
   shirt_size: ShirtSize | null; // made optional with the `?` in Prisma
+  playerstats: StatsType[];
 }
 
 export interface TeamType {
@@ -66,6 +67,8 @@ export interface GameType {
   away_team: TeamType;
   homeStats: StatsType[];
   awayStats: StatsType[];
+  referee1: string;
+  referee2: string;
 }
 
 export interface SeasonType {

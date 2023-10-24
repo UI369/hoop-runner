@@ -92,13 +92,15 @@ const StatsLine: React.FC<Props> = ({ id, stats, header }) => {
       : 0;
 
   const rebounds =
-    stats?.offensive_rebounds &&
-    stats.offensive_rebounds + stats.defensive_rebounds;
+    (stats?.offensive_rebounds || 0) + (stats?.defensive_rebounds || 0);
 
   const pointsScored =
-    stats?.freethrows_made &&
-    stats?.freethrows_made + 2 * stats?.twos_made + 3 * stats?.threes_made;
+    (stats?.freethrows_made || 0) +
+    2 * (stats?.twos_made || 0) +
+    3 * (stats?.threes_made || 0);
 
+  console.log("stats?.freethrows_made", stats?.freethrows_made);
+  console.log("pointsScored", pointsScored);
   return (
     <Tr>
       <Td className="player_name cell" flex="8">

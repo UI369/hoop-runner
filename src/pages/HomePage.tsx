@@ -1,4 +1,5 @@
 import React from "react";
+import SeasonsList from "../hooprunner/views/SeasonsList";
 import {
   Link as ChakraLink,
   Box,
@@ -27,30 +28,7 @@ const HomePage: React.FC = () => {
           <Heading as="h1" size="2xl" mb={4}>
             Grass Valley Draft League
           </Heading>
-          <ChakraLink
-            as={RouterLink}
-            to="/seasons/"
-            variant="internalLink"
-            fontSize="xl"
-          >
-            View Seasons
-          </ChakraLink>
-          <ChakraLink
-            as={RouterLink}
-            to="/teams/"
-            variant="internalLink"
-            fontSize="xl"
-          >
-            View Teams
-          </ChakraLink>
-          <ChakraLink
-            as={RouterLink}
-            to="/games/"
-            variant="internalLink"
-            fontSize="xl"
-          >
-            View Games
-          </ChakraLink>
+          <SeasonsList></SeasonsList>
         </VStack>
       </Center>
       <Text mt={8} fontSize="sm" textAlign="center">
