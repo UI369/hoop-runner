@@ -34,6 +34,7 @@ export interface TeamType {
 export interface StatsType {
   id: number;
   player_id: number;
+  played: boolean;
   playerName: string;
   game_id: number;
   home: Boolean;
@@ -51,6 +52,7 @@ export interface StatsType {
   offensive_rebounds: number;
   defensive_rebounds: number;
 }
+
 export interface GameType {
   id: number;
   game_time: string;

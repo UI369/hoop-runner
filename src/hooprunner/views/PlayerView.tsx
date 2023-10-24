@@ -13,6 +13,7 @@ const PlayerView: React.FC = () => {
       .then((response) => response.json())
       .then((player) => {
         setPlayer(player);
+        console.log("player:", player);
         // Fetch teams to check captain status
         fetch(`${import.meta.env.VITE_API_URL}/teams`)
           .then((response) => response.json())

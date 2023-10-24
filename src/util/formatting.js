@@ -1,17 +1,30 @@
 export function formatDate(dateString, includeTime = false) {
-  const options = {
+  const date = new Date(dateString);
+
+  // Date formatter
+  const dateFormatter = new Intl.DateTimeFormat(undefined, {
     year: "numeric",
     month: "short",
     day: "numeric",
-  };
+  });
+
+  let formattedDate = dateFormatter.format(date);
 
   if (includeTime) {
-    options.hour = "numeric";
-    options.minute = "2-digit";
-    options.hour12 = true;
+    // Time formatter
+    const timeFormatter = new Intl.DateTimeFormat(undefined, {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+
+    const formattedTime = timeFormatter.format(date);
+
+    // Combine date and time
+    formattedDate = `${formattedDate} ${formattedTime}`;
   }
 
-  return new Date(dateString).toLocaleDateString(undefined, options);
+  return formattedDate;
 }
 
 export function inchesToFeet(number) {

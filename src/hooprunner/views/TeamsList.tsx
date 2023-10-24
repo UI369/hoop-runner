@@ -25,12 +25,6 @@ const TeamsList: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log("useEffect is running");
-    console.log("import.meta.env.MODE:", import.meta.env.MODE);
-    console.log(
-      "import.meta.env.VITE_API_URL:",
-      `${import.meta.env.VITE_API_URL}/teams`
-    );
     if (import.meta.env.MODE === "development") {
       console.log("Running in development mode");
     }

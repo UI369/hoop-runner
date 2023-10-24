@@ -6,7 +6,7 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 
-export default function StripePaymentForm() {
+export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -60,7 +60,7 @@ export default function StripePaymentForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:5173/games",
+        return_url: "http://localhost:3000",
       },
     });
 
