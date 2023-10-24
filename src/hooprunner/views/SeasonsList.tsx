@@ -57,7 +57,6 @@ const SeasonsList: React.FC = () => {
     <div>
       <Center>
         <VStack spacing={4} textAlign="center">
-          <h1>Seasons</h1>
           {seasons.map((season) => (
             <>
               <Season

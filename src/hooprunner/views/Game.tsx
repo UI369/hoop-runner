@@ -44,8 +44,9 @@ const Game: React.FC<Props> = ({ id, game, viewMode }) => {
             </span>
             <br />
             <span className="gameDate">
-              {formatDate(game.game_time, true)}
-              {game.home_score ? "" : "\n" + formatGameTime(game.game_time)[1]}
+              {game.home_score
+                ? formatDate(game.game_time, true)
+                : "\n" + formatGameTime(game.game_time)[1]}
             </span>
             <br />
             <span className="gameData">{game.location}</span>
@@ -135,7 +136,7 @@ const Game: React.FC<Props> = ({ id, game, viewMode }) => {
       </div>
     );
   }
-
+  console.log("game.game_time:", game.game_time);
   return (
     <ChakraLink as={Link} to={`/games/${game.id}`}>
       <div className="game-score">
@@ -145,9 +146,9 @@ const Game: React.FC<Props> = ({ id, game, viewMode }) => {
             alt={game.home_team ? game.home_team.team_name : "Team TBD"}
             className="team-logo"
           />
-          {/* <span className="team-name">
-            {game.home_team ? game.home_team.team_name : "TBD"}
-          </span> */}
+          <span className="team-name">
+            {game.home_team ? game.home_team.short_name : "TBD"}
+          </span>
         </div>
         <span className="team-score home-score">
           {game.home_score ? game.home_score : "--"}
@@ -158,7 +159,11 @@ const Game: React.FC<Props> = ({ id, game, viewMode }) => {
           </span>
           <br />
           <span className="gameDate">
-            {game.home_score ? "" : "\n" + formatGameTime(game.game_time)[1]}
+            {game.home_score
+              ? formatGameTime(game.game_time)[1] +
+                " " +
+                formatGameTime(game.game_time)[0]
+              : "\n" + formatDate(game.game_time, true)}
           </span>
         </span>
         <span className="team-score away-score">
@@ -168,12 +173,12 @@ const Game: React.FC<Props> = ({ id, game, viewMode }) => {
         <div className="team away-team">
           <img
             src={game.away_team ? `/team${game.away_team.id}.png` : "/TBD.png"}
-            alt={game.away_team ? game.away_team.team_name : "Team TBD"}
+            alt={game.away_team ? game.away_team.short_name : "Team TBD"}
             className="team-logo"
           />
-          {/* <span className="team-name">
-            {game.away_team ? game.away_team.team_name : "TBD"}
-          </span> */}
+          <span className="team-name">
+            {game.away_team ? game.away_team.short_name : "TBD"}
+          </span>
         </div>
       </div>
     </ChakraLink>
