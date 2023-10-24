@@ -58,9 +58,6 @@ const TeamsList: React.FC = () => {
           />
         </>
       ))}
-      <div className="internalLink">
-        <Link to={`/`}>Return Home</Link>
-      </div>
     </div>
   );
 };

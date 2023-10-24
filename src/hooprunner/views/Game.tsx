@@ -73,7 +73,49 @@ const Game: React.FC<Props> = ({ id, game, viewMode }) => {
             {game.home_team ? game.home_team.team_name : "TBD"}
           </span>
         </div>
-
+        <div className="game-score">
+          <div className="team home-team">
+            <img
+              src={
+                game.home_team ? `/team${game.home_team.id}.png` : "/TBD.png"
+              }
+              alt={game.home_team ? game.home_team.team_name : "Team TBD"}
+              className="team-logo"
+            />
+            <span className="team-name">
+              {game.home_team ? game.home_team.team_name : "TBD"}
+            </span>
+          </div>
+          <span className="team-score home-score">
+            {game.home_score ? game.home_score : "--"}
+          </span>
+          <span className="status">
+            <span className={game.home_score ? "finalTime" : "gameTime"}>
+              {game.home_score ? "FINAL" : formatGameTime(game.game_time)[0]}
+            </span>
+            <br />
+            <span className="gameDate">
+              {game.home_score ? "" : "\n" + formatGameTime(game.game_time)[1]}
+            </span>
+          </span>
+          <span className="team-score away-score">
+            {" "}
+            {game.away_score ? game.away_score : "--"}
+          </span>
+          <div className="team away-team">
+            <img
+              src={
+                game.away_team ? `/team${game.away_team.id}.png` : "/TBD.png"
+              }
+              alt={game.away_team ? game.away_team.team_name : "Team TBD"}
+              className="team-logo"
+            />
+            <span className="team-name">
+              {game.away_team ? game.away_team.team_name : "TBD"}
+            </span>
+          </div>
+        </div>
+        <strong>Location:</strong> {game.location}
         <Table variant="simple">
           <StatsLineComponent id={0} header={true} />
 
@@ -122,7 +164,6 @@ const Game: React.FC<Props> = ({ id, game, viewMode }) => {
               ))}
           </Tbody>
         </Table>
-
         <div className="internalLink">
           <Link to={`/seasons/${game.season_id}`}>Back to Season</Link>
         </div>

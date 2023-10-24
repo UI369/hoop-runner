@@ -2,6 +2,7 @@ import React from "react";
 
 import PlayerComponent from "./Player";
 import TeamComponent from "./Team";
+import TeamListComponent from "./TeamsList";
 import GameComponent from "./Game";
 import { SeasonType } from "../types";
 import { Link as RouterLink } from "react-router-dom";
