@@ -63,6 +63,9 @@ const StatsLine: React.FC<Props> = ({ id, stats, header }) => {
           <Th className="player_blk cell" flex="1">
             BLK
           </Th>
+          <Th className="player_to cell" flex="1">
+            TO
+          </Th>
           <Th className="player_pf cell" flex="1">
             PF
           </Th>
@@ -165,6 +168,9 @@ const StatsLine: React.FC<Props> = ({ id, stats, header }) => {
           </Td>
           <Td className="player_blk cell" flex="1">
             {stats?.blocks}
+          </Td>
+          <Td className="player_to cell" flex="1">
+            {stats?.turnovers}
           </Td>
           <Td className="player_pf cell" flex="1">
             {stats?.fouls}

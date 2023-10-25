@@ -34,7 +34,7 @@ const Season: React.FC<Props> = ({ id, season, viewMode }) => {
           <VStack spacing={2} textAlign="center">
             <div>Season Start: {readableDate(season.start_date)}</div>
             <hr></hr>
-            <h2>
+            {/* <h2>
               <strong>Teams</strong>
             </h2>
 
@@ -49,7 +49,7 @@ const Season: React.FC<Props> = ({ id, season, viewMode }) => {
                   />
                 </>
               ))}
-            </div>
+            </div> */}
             <h2>
               <strong>Games</strong>
             </h2>

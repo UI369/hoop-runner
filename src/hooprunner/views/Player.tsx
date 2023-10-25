@@ -41,6 +41,7 @@ const Player: React.FC<Props> = ({ id, player, captain, viewMode }) => {
           assists: acc.assists + (stat.assists || 0),
           steals: acc.steals + (stat.steals || 0),
           blocks: acc.blocks + (stat.blocks || 0),
+          turnovers: acc.turnovers + (stat.turnovers || 0),
           fouls: acc.fouls + (stat.fouls || 0),
           minutes_played: acc.minutes_played + (stat.minutes_played || 0),
           played: true,
@@ -62,6 +63,7 @@ const Player: React.FC<Props> = ({ id, player, captain, viewMode }) => {
         assists: 0,
         steals: 0,
         blocks: 0,
+        turnovers: 0,
         fouls: 0,
         minutes_played: 0,
         home: true,
@@ -118,7 +120,7 @@ const Player: React.FC<Props> = ({ id, player, captain, viewMode }) => {
       </div>
     );
   }
-
+  console.log("aggregated:", aggregated);
   return (
     <div className="row">
       <span className="cell">

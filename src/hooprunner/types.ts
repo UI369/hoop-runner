@@ -48,6 +48,7 @@ export interface StatsType {
   assists: number;
   blocks: number;
   steals: number;
+  turnovers: number;
   freethrows_attempted: number;
   freethrows_made: number;
   offensive_rebounds: number;
