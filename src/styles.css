@@ -125,6 +125,19 @@ ul {
   box-sizing: border-box;
 }
 
+.focusLink {
+  display: inline-block; /* Makes the div behave like an inline element */
+  background-color: darkgoldenrod;
+  color: white;
+  padding: 10px 20px; /* Padding around the text to give button-like spacing */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text inside */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  margin-right: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
 .externalLink {
   display: inline-block; /* Makes the div behave like an inline element */
   background-color: darkblue; /* Dark blue background */

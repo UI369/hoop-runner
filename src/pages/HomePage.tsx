@@ -9,7 +9,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import pageLogo from "../assets/page_logo.png";
+import pageLogo from "../assets/season2_flyer.png";
 
 const HomePage: React.FC = () => {
   return (
@@ -28,9 +28,14 @@ const HomePage: React.FC = () => {
           <Heading as="h1" size="2xl" mb={4}>
             Grass Valley Draft League
           </Heading>
-          <h1 className="externalLink">
+          <h1 className="focusLink ">
             <ChakraLink as={Link} to={`https://bit.ly/GVDRAFT`}>
               Register for Season 2
+            </ChakraLink>
+          </h1>
+          <h1 className="externalLink">
+            <ChakraLink as={Link} to={`https://forms.gle/jaLsFs5HpBp4bvkA9`}>
+              Season 1 Feedback Form
             </ChakraLink>
           </h1>
           <SeasonsList></SeasonsList>

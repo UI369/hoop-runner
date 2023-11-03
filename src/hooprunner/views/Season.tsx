@@ -86,7 +86,7 @@ const Season: React.FC<Props> = ({ id, season, viewMode }) => {
       variant="internalLink"
       fontSize="xl"
     >
-      Season {season.id}
+      Season {season.id} Stats
     </ChakraLink>
   );
 };
