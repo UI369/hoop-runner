@@ -9,7 +9,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import pageLogo from "../assets/season2_flyer.png";
+import pageLogo from "../assets/page_logo.png";
 
 const HomePage: React.FC = () => {
   return (
