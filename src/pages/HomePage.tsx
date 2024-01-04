@@ -42,8 +42,8 @@ const HomePage: React.FC = () => {
           <SeasonsList></SeasonsList>
         </VStack>
       </Center>
-      <Text mt={8} fontSize="sm" textAlign="center">
-        Welcome to the premier basketball league in Grass Valley!
+      <Text mt={8} textAlign="center">
+        Contact: Matt Davis (512) 579-8800 or matt@boystomennorcal.org
       </Text>
     </Box>
   );
