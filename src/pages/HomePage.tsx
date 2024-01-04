@@ -33,6 +33,7 @@ const HomePage: React.FC = () => {
               Register for Season 2
             </ChakraLink>
           </h1>
+          <h2> Season 2 Postponed to February. Dates TBA.</h2>
           <h1 className="externalLink">
             <ChakraLink as={Link} to={`https://forms.gle/jaLsFs5HpBp4bvkA9`}>
               Season 1 Feedback Form
