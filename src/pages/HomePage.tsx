@@ -25,18 +25,14 @@ const HomePage: React.FC = () => {
       <Center>
         <VStack spacing={4} textAlign="center">
           <img src={pageLogo} alt="Page Logo" className="logoImage" />
-          <Heading as="h1" size="2xl" mb={4}>
-            Grass Valley Draft League
-          </Heading>
+          <h1 className="aboutLink">
+            <ChakraLink as={Link} to="/about" isExternal color="blue.500">
+              Learn More
+            </ChakraLink>
+          </h1>
           <h1 className="focusLink ">
             <ChakraLink as={Link} to={`https://bit.ly/GVDRAFT`}>
               Register for Season 2
-            </ChakraLink>
-          </h1>
-          <h2> Season 2 Postponed to February. Dates TBA.</h2>
-          <h1 className="externalLink">
-            <ChakraLink as={Link} to={`https://forms.gle/jaLsFs5HpBp4bvkA9`}>
-              Season 1 Feedback Form
             </ChakraLink>
           </h1>
           <SeasonsList></SeasonsList>

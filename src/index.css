@@ -67,3 +67,22 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* About.css */
+.about-container {
+  max-width: 600px; /* Adjust as needed */
+  margin: auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 10px;
+  }
+  .about-container h1 {
+    font-size: 24px; /* Smaller font size for mobile */
+  }
+  .about-container p {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+}
